@@ -1,7 +1,11 @@
-export class Component {
-    constructor(id) {
+
+export class Component{
+    constructor(id){
         this.$el = document.getElementById(id)
         this.init()
     }
-    init() {}
-}
+    init(){}
+    hide(){
+        this.$el.style.display= 'none'
+    }
+} 

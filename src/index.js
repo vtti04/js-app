@@ -1,5 +1,13 @@
-import {HeaderComponent} from '../src/components/header.components.js'
+import {HeaderComponent} from '../src/components/header.components'
+import {NavigationComponent} from '../src/components/navigation.component'
+import { CreateComponent } from './components/create.component'
+import { FavoriteComponent } from './components/favorite.component'
+import { PostsComponent } from './components/posts.component'
 
-const header = new HeaderComponent('header')
+new HeaderComponent('header')
 
-console.log(header)
+const navigation = new NavigationComponent('navigation')
+
+const posts = new PostsComponent('posts')
+const favorite = new FavoriteComponent('favorite')
+const create = new CreateComponent('create')
