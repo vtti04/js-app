@@ -9,11 +9,12 @@ export class HeaderComponent extends Component{
             this.hide()
         }
         const btn = this.$el.querySelector('.js-header-start')
-        console.log(btn);
+        console.log(btn, this);
         btn.addEventListener('click', onButtonClick.bind(this))
     }
+    
 }
 function onButtonClick(){
     localStorage.setItem('clicked', JSON.stringify(true))
-    this.hide()
+    this.$el.style.display='none'
 }

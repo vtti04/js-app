@@ -10,6 +10,9 @@ export class NavigationComponent extends Component {
     init() {
         this.$el.addEventListener('click', tabClickHendler.bind(this))
     }
+    registerTabs(tabs){
+        this.tabs= tabs
+    }
 }
 
 function tabClickHendler(event) {
@@ -17,5 +20,10 @@ function tabClickHendler(event) {
         Array.from(this.$el.querySelectorAll('.tab')).forEach(tab =>
             tab.classList.remove('active'))
             event.target.classList.add('active')
+            
+           const activeTab = this.tabs.find(t => t.name ===event.target.dataset.name) 
+           this.tabs.forEach(tab=>tab.component.hide())
+           activeTab.component.show()
+           
     }
 }
