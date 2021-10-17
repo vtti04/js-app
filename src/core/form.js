@@ -15,6 +15,12 @@ export class Form {
         })
         return value
     }
+    clear(){
+        Object.keys(this.controls).forEach(control => {
+            this.form[control].value=''
+        })
+    }
+
     isValied() {
         let isFormValid = true
 
@@ -23,10 +29,12 @@ export class Form {
 
                 let isValid = true
                 validators.forEach(validate => {
-                    isValid = validate(this.form[control].value)
+                    isValid = validate(this.form[control].value) && isValid
                 })
                 if (!isValid) {
                     setError(this.form[control])
+                } else{
+                    clearError(this.form[control])
                 }
                 isFormValid = isFormValid && isValid
             }
@@ -44,6 +52,7 @@ function setError($control) {
 
 function clearError($control) {
     $control.classList.remove('invalid')
-    $control.closest('.form-control').removeChild($control.nextSibling)
-
+    if ($control.nextSibling){
+        $control.closest('.form-control').removeChild($control.nextSibling)
+    }
 }

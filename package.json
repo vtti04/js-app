@@ -26,6 +26,16 @@
     "webpack-dev-server": "^4.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
-  }
+    "@babel/polyfill": "^7.12.1",
+    "node": "^16.10.0",
+    "nodejs": "^0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtti04/js-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vtti04/js-app/issues"
+  },
+  "homepage": "https://github.com/vtti04/js-app#readme"
 }
